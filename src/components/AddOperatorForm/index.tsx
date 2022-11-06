@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Input } from "./styles";
+import { Button, Form, Input } from "./styles";
 
 const AddOperatorForm = () => {
 	const [operatorName, setOperatorName] = useState<string>();
@@ -9,14 +9,14 @@ const AddOperatorForm = () => {
 	};
 	return (
 		<div>
-			<form onSubmit={(e) => addOperator(e)}>
+			<Form onSubmit={(e) => addOperator(e)}>
 				<Input
 					placeholder="Nome do operador"
 					value={operatorName}
 					onChange={(e) => setOperatorName(e.target.value)}
 				/>
 				<Button type="submit">Adicionar</Button>
-			</form>
+			</Form>
 		</div>
 	);
 };

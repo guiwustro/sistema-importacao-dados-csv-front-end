@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Form = styled.form`
+	display: flex;
+	gap: 0.5rem;
+`;
+
 export const Button = styled.button`
 	background-color: var(--color-blue-700);
 	color: var(--color-white);
@@ -7,6 +12,9 @@ export const Button = styled.button`
 	font-weight: 700;
 	border-radius: 20px;
 	padding: 0.7rem 1.5rem;
+	&:hover {
+		background-color: var(--color-blue-500);
+	}
 `;
 
 export const Input = styled.input`

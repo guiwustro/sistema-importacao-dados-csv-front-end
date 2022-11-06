@@ -1,12 +1,17 @@
 import AddOperatorForm from "../../components/AddOperatorForm";
 import Header from "../../components/Header";
+import { Container, Main } from "./styles";
 
 const Home = () => {
 	return (
-		<div>
+		<>
 			<Header />
-			<AddOperatorForm />
-		</div>
+			<Container>
+				<Main>
+					<AddOperatorForm />
+				</Main>
+			</Container>
+		</>
 	);
 };
 

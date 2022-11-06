@@ -10,6 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.div`
+	max-width: 1200px;
 	font-style: normal;
 	font-weight: 700;
 	color: var(--color-white);
