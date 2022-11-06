@@ -3,17 +3,18 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   :root {
     --color-background: #FFFFFF;
-	--color-text: #000000;
+	  --color-text: #000000;
+    --color-white: #ffffff;
     --color-blue-700: #2F69AC;
     --color-blue-500:#B4D0F0;
     --color-blue-300: #E3EEFB;
     --color-green-500: #9ED79C;
     --color-green-300: #DAF3DA;
-    --color-gray-0: #F8F9FA;
-    --color-gray-1: #868E96;
-    --color-gray-2: #343B41;
-    --color-gray-3:#212529;
-    --color-gray-4:#121214;
+    --color-gray-100: #F8F9FA;
+    --color-gray-300: #868E96;
+    --color-gray-500: #343B41;
+    --color-gray-600:#212529;
+    --color-gray-700:#121214;
     --color-red: #ed4337;
   }
   
@@ -23,15 +24,16 @@ export default createGlobalStyle`
     outline:0;
     box-sizing: border-box;
     color: var(--color-text);
+	font-family: "Nunito";
+
   }
 
   body {
-    background: var(--color-background);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     overflow-y: auto;
     width: 100vw;
     height: 100vh;
-    background-color:var(--color-gray-4)
   }
 
   button {
