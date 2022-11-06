@@ -1,11 +1,13 @@
 import { useOperatorContext } from "../../contexts/operatorContext";
 import {
 	Container,
+	ContainerOperatorName,
 	Table,
 	THeadSecondary,
 	THPrimaryBlue,
 	THPrimaryGreen,
 } from "./styles";
+import { BsFillTrashFill } from "react-icons/bs";
 
 const OperatorsClientsTable = () => {
 	const { operators } = useOperatorContext();
@@ -31,20 +33,28 @@ const OperatorsClientsTable = () => {
 					{operators?.map((operator) => {
 						if (operator.clients.length === 0) {
 							return (
-								<tr>
-									<td>{operator.name}</td>
+								<tr key={operator.id}>
+									<td>
+										<span>{operator.name}</span>
+										<BsFillTrashFill />
+									</td>
 								</tr>
 							);
 						}
 						return operator.clients?.map((client, i) => {
 							return (
-								<tr>
+								<tr key={client.id}>
 									{i === 0 && (
-										<td rowSpan={operator.clients.length}>{operator.name}</td>
+										<td rowSpan={operator.clients.length}>
+											<ContainerOperatorName>
+												<span>{operator.name}</span>
+												<BsFillTrashFill />
+											</ContainerOperatorName>
+										</td>
 									)}
 									<td>{client.name}</td>
 									<td>{client.email}</td>
-									<td>{client.value}</td>
+									<td>R$ {client.value}</td>
 									<td>{client.birthDate}</td>
 								</tr>
 							);

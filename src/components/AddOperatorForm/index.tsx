@@ -21,6 +21,7 @@ const AddOperatorForm = () => {
 				<Input
 					placeholder="Nome do operador"
 					value={operatorName}
+					maxLength={16}
 					onChange={(e) => setOperatorName(e.target.value)}
 				/>
 				<Button type="submit">Adicionar</Button>

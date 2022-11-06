@@ -11,6 +11,13 @@ export const Container = styled.div`
 	max-width: 320px;
 	width: 100%;
 	max-width: 100%;
+	min-width: 700px;
+	table {
+		overflow: auto;
+	}
+	thead {
+		overflow: auto;
+	}
 	td {
 		border: 1px solid var(--color-blue-500);
 	}
@@ -59,4 +66,12 @@ export const THeadSecondary = styled.tr`
 	& > th:nth-child(5) {
 		width: 100px;
 	}
+`;
+export const ContainerOperatorName = styled.div`
+	display: flex;
+	max-width: 200px;
+	gap: 0.5rem;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 `;

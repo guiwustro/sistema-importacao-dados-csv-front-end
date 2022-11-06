@@ -1,7 +1,9 @@
 import AddOperatorForm from "../../components/AddOperatorForm";
 import Header from "../../components/Header";
 import OperatorsClientsTable from "../../components/OperatorsClientsTable";
-import { Container, Main } from "./styles";
+import { Container, ContainerRow, Main } from "./styles";
+import UploadCSVFile from "../../components/UploadCSVFile";
+import ExportCSVFile from "../../components/ExportCSVFile";
 
 const Home = () => {
 	return (
@@ -9,7 +11,11 @@ const Home = () => {
 			<Header />
 			<Container>
 				<Main>
-					<AddOperatorForm />
+					<ContainerRow>
+						<AddOperatorForm />
+						<UploadCSVFile />
+						<ExportCSVFile />
+					</ContainerRow>
 					<OperatorsClientsTable />
 				</Main>
 			</Container>

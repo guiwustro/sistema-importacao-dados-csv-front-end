@@ -18,6 +18,7 @@ interface IClient {
 interface IOperatorContext {
 	operators?: IOperator[];
 	createOperator: (data: IOperatorRequest) => void;
+	uploadNewClients: (file: any) => void;
 }
 
 interface IProviderProps {
@@ -30,6 +31,7 @@ const OperatorContext = createContext({} as IOperatorContext);
 
 export const OperatorContextProvider = ({ children }: IProviderProps) => {
 	const [operators, setOperators] = useState<IOperator[]>();
+	const [loadingData, setLoadingData] = useState(false);
 
 	const getAllOperators = () => {
 		api.get("/operators").then((res) => setOperators(res.data));
@@ -40,15 +42,30 @@ export const OperatorContextProvider = ({ children }: IProviderProps) => {
 	}, []);
 
 	const createOperator = (data: IOperatorRequest) => {
-		api.post("/operators", data).then(() => getAllOperators());
+		api.post("/operators", data).then((r) => {
+			getAllOperators();
+		});
+	};
+
+	const uploadNewClients = (file: any) => {
+		setLoadingData(true);
+		console.log("oi");
+		api
+			.post("/clients", file)
+			.then(() => {
+				setLoadingData(false);
+				getAllOperators();
+			})
+			.catch((e) => console.log(e));
 	};
 
 	return (
-		<OperatorContext.Provider value={{ operators, createOperator }}>
+		<OperatorContext.Provider
+			value={{ operators, createOperator, uploadNewClients }}
+		>
 			{children}
 		</OperatorContext.Provider>
 	);
 };
 
 export const useOperatorContext = () => useContext(OperatorContext);
-// value={{ test }}

@@ -15,4 +15,12 @@ export const Main = styled.main`
 	flex-direction: column;
 	gap: 1rem;
 	align-items: flex-start;
+	overflow: auto;
+`;
+
+export const ContainerRow = styled.div`
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
 `;
