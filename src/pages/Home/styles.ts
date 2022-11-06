@@ -12,5 +12,7 @@ export const Container = styled.div`
 export const Main = styled.main`
 	margin-top: 50px;
 	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 	align-items: flex-start;
 `;
