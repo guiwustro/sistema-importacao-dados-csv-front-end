@@ -34,7 +34,7 @@ const UploadCSVFile = () => {
 		accept: {
 			"text/csv": [".csv"],
 		},
-		onDropAccepted(files, event) {
+		onDropAccepted(files) {
 			submitFile(files);
 		},
 	});
@@ -45,14 +45,14 @@ const UploadCSVFile = () => {
 		}));
 		setUploadedFiles(uploadFiles);
 	}
-	const submit = () => {
+
+	const submitButton = () => {
 		const data = new FormData();
-		console.log(!uploadedFiles[0]);
 		if (!uploadedFiles.length) return;
 
 		const file = uploadedFiles[0];
 		data.append("file", file.file, file.name);
-		// uploadNewClients(data);
+		uploadNewClients(data);
 	};
 
 	return (
@@ -76,7 +76,7 @@ const UploadCSVFile = () => {
 			<ButtonUpload
 				data-hover="O arquivo importado deve possuir quatro tipo de colunas: nome, data de nascimento, email e valor."
 				disabled={!uploadedFiles[0] ? true : false}
-				onClick={() => submit()}
+				onClick={() => submitButton()}
 			>
 				Upload
 			</ButtonUpload>

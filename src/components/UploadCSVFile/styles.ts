@@ -74,6 +74,7 @@ export const ButtonUpload = styled.button`
 	position: relative;
 	:disabled {
 		cursor: not-allowed;
+		background-color: var(--color-blue-400);
 	}
 	&:hover:enabled {
 		background-color: var(--color-blue-500);

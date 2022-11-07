@@ -1,4 +1,3 @@
-import { CSVLink } from "react-csv";
 import { useOperatorContext } from "../../contexts/operatorContext";
 import { CSVLinkStyled } from "./styles";
 
