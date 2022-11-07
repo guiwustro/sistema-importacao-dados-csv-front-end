@@ -10,15 +10,22 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
+	display: grid;
+	grid-template-areas: "headerMain" "tableMain" "historic";
 	padding-top: 50px;
-	display: flex;
+	padding-right: 2rem;
+	padding-left: 2rem;
 	flex-direction: column;
 	gap: 1rem;
 	align-items: flex-start;
 	overflow: auto;
+	@media screen and (min-width: 1220px) {
+		grid-template-areas: "headerMain historic" "tableMain historic";
+	}
 `;
 
 export const ContainerRow = styled.div`
+	grid-area: headerMain;
 	display: flex;
 	flex-direction: row;
 	width: 90%;

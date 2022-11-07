@@ -6,7 +6,8 @@ export default createGlobalStyle`
 	  --color-text: #000000;
     --color-white: #ffffff;
     --color-blue-700: #2F69AC;
-    --color-blue-500:#B4D0F0;
+    --color-blue-500:#6facf3;
+    --color-blue-400: #B4D0F0;
     --color-blue-300: #E3EEFB;
     --color-green-500: #9ED79C;
     --color-green-300: #DAF3DA;

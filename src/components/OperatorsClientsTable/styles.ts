@@ -5,6 +5,7 @@ export const ContainerMain = styled.div`
 	overflow: auto;
 `;
 export const Container = styled.div`
+	grid-area: tableMain;
 	overflow: auto;
 	max-width: 320px;
 	width: 90%;

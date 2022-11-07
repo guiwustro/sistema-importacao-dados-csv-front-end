@@ -11,8 +11,7 @@ import {
 import { BsFillTrashFill } from "react-icons/bs";
 
 const OperatorsClientsTable = () => {
-	const { operators, removeOperator } = useOperatorContext();
-	console.log(operators);
+	const { operators, removeOperator, clients } = useOperatorContext();
 
 	return (
 		<Container>
@@ -67,6 +66,19 @@ const OperatorsClientsTable = () => {
 							);
 						});
 					})}
+					{/* Se for adicionado somente clientes, sem operadores */}
+					{operators?.length === 0 &&
+						clients?.map((client) => {
+							return (
+								<tr key={client.id}>
+									<td></td>
+									<td>{client.name}</td>
+									<td>{client.email}</td>
+									<td>R$ {client.value}</td>
+									<td>{client.birthDate}</td>
+								</tr>
+							);
+						})}
 				</tbody>
 			</Table>
 		</Container>
