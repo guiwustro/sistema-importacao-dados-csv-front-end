@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export {};
-
 export const ContainerMain = styled.div`
 	max-width: 100%;
 	overflow: auto;
@@ -9,9 +7,9 @@ export const ContainerMain = styled.div`
 export const Container = styled.div`
 	overflow: auto;
 	max-width: 320px;
-	width: 100%;
-	max-width: 100%;
-	min-width: 700px;
+	width: 90%;
+	max-width: 90%;
+	min-width: 800px;
 	table {
 		overflow: auto;
 	}
@@ -67,11 +65,27 @@ export const THeadSecondary = styled.tr`
 		width: 100px;
 	}
 `;
+
+export const TdOperator = styled.td`
+	position: relative;
+`;
 export const ContainerOperatorName = styled.div`
 	display: flex;
 	max-width: 200px;
 	gap: 0.5rem;
 	text-align: center;
-	align-items: center;
 	justify-content: center;
+	height: 100%;
+	& > button {
+		position: absolute;
+		top: 0.2rem;
+		right: 0.4rem;
+		svg {
+			fill: var(--color-gray-700);
+			:hover {
+				fill: var(--color-gray-300);
+			}
+		}
+		font-size: 1rem;
+	}
 `;

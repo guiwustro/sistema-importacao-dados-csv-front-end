@@ -36,6 +36,9 @@ const ExportCSVFile = () => {
 
 	return (
 		<CSVLinkStyled
+			data-hover={
+				"O export gerará um arquivo CSV contendo todas as infos do cliente com um operador."
+			}
 			data={clientOperatorArray}
 			headers={headers}
 			filename={"distribuicao-dos-clientes-e-operadores.csv"}

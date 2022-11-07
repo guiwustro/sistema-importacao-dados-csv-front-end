@@ -3,6 +3,7 @@ import {
 	Container,
 	ContainerOperatorName,
 	Table,
+	TdOperator,
 	THeadSecondary,
 	THPrimaryBlue,
 	THPrimaryGreen,
@@ -34,12 +35,14 @@ const OperatorsClientsTable = () => {
 						if (operator.clients.length === 0) {
 							return (
 								<tr key={operator.id}>
-									<td>
-										<span>{operator.name}</span>
-										<button onClick={() => removeOperator(operator.id)}>
-											<BsFillTrashFill />
-										</button>
-									</td>
+									<TdOperator>
+										<ContainerOperatorName>
+											<span>{operator.name}</span>
+											<button onClick={() => removeOperator(operator.id)}>
+												<BsFillTrashFill />
+											</button>
+										</ContainerOperatorName>
+									</TdOperator>
 								</tr>
 							);
 						}
@@ -47,14 +50,14 @@ const OperatorsClientsTable = () => {
 							return (
 								<tr key={client.id}>
 									{i === 0 && (
-										<td rowSpan={operator.clients.length}>
+										<TdOperator rowSpan={operator.clients.length}>
 											<ContainerOperatorName>
 												<span>{operator.name}</span>
 												<button onClick={() => removeOperator(operator.id)}>
 													<BsFillTrashFill />
 												</button>
 											</ContainerOperatorName>
-										</td>
+										</TdOperator>
 									)}
 									<td>{client.name}</td>
 									<td>{client.email}</td>

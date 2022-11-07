@@ -2,7 +2,12 @@ import { useState } from "react";
 
 import { useDropzone } from "react-dropzone";
 import { useOperatorContext } from "../../contexts/operatorContext";
-import { ButtonUpload, UploadContainer, UploadMessage } from "./styles";
+import {
+	ButtonUpload,
+	DropzoneContainer,
+	UploadContainer,
+	UploadMessage,
+} from "./styles";
 interface FileProps {
 	file: File;
 	name: string;
@@ -50,11 +55,12 @@ const UploadCSVFile = () => {
 		// uploadNewClients(data);
 	};
 
-	// hover => O arquivo CSV deve possuir quatro tipo de colunas: nome, data de nascimento, email e valor
-	// hover => O export gerará um arquivo CSV contendo as inforrmações do cliente com uma coluna indicando o operador responsável.
 	return (
 		<UploadContainer>
-			<div {...getRootProps({ className: "dropzone" })}>
+			<DropzoneContainer
+				{...getRootProps({ className: "dropzone" })}
+				data-hover="O arquivo importado deve possuir quatro tipo de colunas: nome, data de nascimento, email e valor."
+			>
 				<input {...getInputProps()} />
 				{isDragAccept && <UploadMessage>Solte o arquivo aqui</UploadMessage>}
 				{isDragReject && (
@@ -66,8 +72,9 @@ const UploadCSVFile = () => {
 				{!!uploadedFiles[0] && (
 					<UploadMessage>{fileName20Characters()}</UploadMessage>
 				)}
-			</div>
+			</DropzoneContainer>
 			<ButtonUpload
+				data-hover="O arquivo importado deve possuir quatro tipo de colunas: nome, data de nascimento, email e valor."
 				disabled={!uploadedFiles[0] ? true : false}
 				onClick={() => submit()}
 			>

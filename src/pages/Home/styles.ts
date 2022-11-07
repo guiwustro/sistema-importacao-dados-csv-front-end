@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-	margin-top: 50px;
+	padding-top: 50px;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -21,6 +21,9 @@ export const Main = styled.main`
 export const ContainerRow = styled.div`
 	display: flex;
 	flex-direction: row;
-	width: 100%;
-	justify-content: space-between;
+	width: 90%;
+	gap: 1.5rem;
+	@media screen and (min-width: 768px) {
+		justify-content: space-between;
+	}
 `;
