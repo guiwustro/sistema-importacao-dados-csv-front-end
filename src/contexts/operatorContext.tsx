@@ -19,6 +19,7 @@ interface IOperatorContext {
 	operators?: IOperator[];
 	createOperator: (data: IOperatorRequest) => void;
 	uploadNewClients: (file: any) => void;
+	removeOperator: (id: string) => void;
 }
 
 interface IProviderProps {
@@ -47,6 +48,12 @@ export const OperatorContextProvider = ({ children }: IProviderProps) => {
 		});
 	};
 
+	const removeOperator = (id: string) => {
+		api.delete(`/operators/${id}`).then((r) => {
+			getAllOperators();
+		});
+	};
+
 	const uploadNewClients = (file: any) => {
 		setLoadingData(true);
 		console.log("oi");
@@ -61,7 +68,7 @@ export const OperatorContextProvider = ({ children }: IProviderProps) => {
 
 	return (
 		<OperatorContext.Provider
-			value={{ operators, createOperator, uploadNewClients }}
+			value={{ operators, createOperator, uploadNewClients, removeOperator }}
 		>
 			{children}
 		</OperatorContext.Provider>

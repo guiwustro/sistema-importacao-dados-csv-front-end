@@ -10,7 +10,7 @@ import {
 import { BsFillTrashFill } from "react-icons/bs";
 
 const OperatorsClientsTable = () => {
-	const { operators } = useOperatorContext();
+	const { operators, removeOperator } = useOperatorContext();
 	console.log(operators);
 
 	return (
@@ -36,7 +36,9 @@ const OperatorsClientsTable = () => {
 								<tr key={operator.id}>
 									<td>
 										<span>{operator.name}</span>
-										<BsFillTrashFill />
+										<button onClick={() => removeOperator(operator.id)}>
+											<BsFillTrashFill />
+										</button>
 									</td>
 								</tr>
 							);
@@ -48,7 +50,9 @@ const OperatorsClientsTable = () => {
 										<td rowSpan={operator.clients.length}>
 											<ContainerOperatorName>
 												<span>{operator.name}</span>
-												<BsFillTrashFill />
+												<button onClick={() => removeOperator(operator.id)}>
+													<BsFillTrashFill />
+												</button>
 											</ContainerOperatorName>
 										</td>
 									)}
