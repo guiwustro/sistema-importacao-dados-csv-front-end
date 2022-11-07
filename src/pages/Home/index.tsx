@@ -4,6 +4,7 @@ import OperatorsClientsTable from "../../components/OperatorsClientsTable";
 import { Container, ContainerRow, Main } from "./styles";
 import UploadCSVFile from "../../components/UploadCSVFile";
 import ExportCSVFile from "../../components/ExportCSVFile";
+import FileHistoric from "../../components/FileHistoric";
 
 const Home = () => {
 	return (
@@ -17,6 +18,7 @@ const Home = () => {
 						<ExportCSVFile />
 					</ContainerRow>
 					<OperatorsClientsTable />
+					<FileHistoric />
 				</Main>
 			</Container>
 		</>
